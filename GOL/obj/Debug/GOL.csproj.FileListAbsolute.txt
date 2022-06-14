@@ -1,0 +1,10 @@
+C:\Users\zerop\Documents\ProgramProject1\GOL\GOL\bin\Debug\GOL.exe.config
+C:\Users\zerop\Documents\ProgramProject1\GOL\GOL\bin\Debug\GOL.exe
+C:\Users\zerop\Documents\ProgramProject1\GOL\GOL\bin\Debug\GOL.pdb
+C:\Users\zerop\Documents\ProgramProject1\GOL\GOL\obj\Debug\GOL.csproj.AssemblyReference.cache
+C:\Users\zerop\Documents\ProgramProject1\GOL\GOL\obj\Debug\GOL.Form1.resources
+C:\Users\zerop\Documents\ProgramProject1\GOL\GOL\obj\Debug\GOL.Properties.Resources.resources
+C:\Users\zerop\Documents\ProgramProject1\GOL\GOL\obj\Debug\GOL.csproj.GenerateResource.cache
+C:\Users\zerop\Documents\ProgramProject1\GOL\GOL\obj\Debug\GOL.csproj.CoreCompileInputs.cache
+C:\Users\zerop\Documents\ProgramProject1\GOL\GOL\obj\Debug\GOL.exe
+C:\Users\zerop\Documents\ProgramProject1\GOL\GOL\obj\Debug\GOL.pdb
