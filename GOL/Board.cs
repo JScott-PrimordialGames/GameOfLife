@@ -34,7 +34,6 @@ namespace GOL
         public int getHeight() { return Rows; }
         public int getWidth() { return Cols; }
 
-
         public void nextGeneration()
         {
             for(int x = 0; x < Rows; x++ )
@@ -59,6 +58,7 @@ namespace GOL
                             universe[x, y].setGenAlive(0);
                         }
                     }
+
                 }
             }
         }

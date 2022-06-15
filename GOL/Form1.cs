@@ -21,16 +21,19 @@ namespace GOL
 
         // The Timer class
         Timer timer = new Timer();
+        int timescale = 100;
         bool timerStopped = true;
 
         // Generation count
         int generations = 0;
 
+        int LivingCells = 0;
+
         public Form1()
         {
             InitializeComponent();
             // Setup the timer
-            timer.Interval = 100; // milliseconds
+            timer.Interval = timescale; // milliseconds
             timer.Tick += Timer_Tick;
         }
 
@@ -43,6 +46,13 @@ namespace GOL
             graphicsPanel1.Refresh();
             // Update status strip generations
             toolStripStatusLabelGenerations.Text = "Generations = " + generations.ToString();
+            int LivingCells = 0;
+            foreach (Cell cell in board.universe)
+            {
+                if (cell.getIsAlive())
+                    LivingCells++;
+            }
+            toolStripStatusLabelLivingCells.Text = "Living Cells = " + LivingCells.ToString();
         }
 
         // The event called by the timer every Interval milliseconds.
@@ -82,6 +92,9 @@ namespace GOL
                     if (board.universe[x, y].getIsAlive())
                     {
                         e.Graphics.FillRectangle(cellBrush, cellRect);
+                        Font drawFont = new Font("Arial", 16);
+                        SolidBrush drawBrush = new SolidBrush(Color.Black);
+                        e.Graphics.DrawString(board.universe[x, y].getGenAlive().ToString(), drawFont, drawBrush, cellRect.X, cellRect.Y);
                     }
 
                     // Outline the cell with a pen
@@ -112,6 +125,12 @@ namespace GOL
                 // Toggle the cell's state
                 board.universe[x, y].setIsAlive(!board.universe[x, y].getIsAlive());
 
+                if(board.universe[x, y].getIsAlive())
+                    LivingCells++;
+                else
+                    LivingCells--;
+
+                toolStripStatusLabelLivingCells.Text = "Living Cells = " + LivingCells.ToString();
                 // Tell Windows you need to repaint
                 graphicsPanel1.Invalidate();
             }
@@ -129,19 +148,20 @@ namespace GOL
             timerStopped = true;
         }
 
-        private void nextGenerationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (timerStopped)
-                NextGeneration();
-        }
-
         private void newUniverseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             timer.Stop();
             generations = 0;
             board.newUniverse(10, 10);
             toolStripStatusLabelGenerations.Text = "Generations = " + generations.ToString();
+            toolStripStatusLabelLivingCells.Text = "Living Cells = " + LivingCells.ToString();
             graphicsPanel1.Refresh();
+        }
+
+        private void nextGenerationToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (timerStopped)
+                NextGeneration();
         }
     }
 }
