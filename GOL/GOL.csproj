@@ -54,6 +54,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="rndSeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rndSeed.Designer.cs">
+      <DependentUpon>rndSeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="GraphicsPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rndSeed.resx">
+      <DependentUpon>rndSeed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewSizeForm.resx">
       <DependentUpon>NewSizeForm.cs</DependentUpon>

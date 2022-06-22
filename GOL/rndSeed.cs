@@ -10,22 +10,14 @@ using System.Windows.Forms;
 
 namespace GOL
 {
-    public partial class NewSizeForm : Form
+    public partial class rndSeed : Form
     {
-        public NewSizeForm()
+        public rndSeed()
         {
             InitializeComponent();
         }
 
-        private void txb_NewCols_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txb_NewRows_KeyPress(object sender, KeyPressEventArgs e)
+        private void txb_NewSeed_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {

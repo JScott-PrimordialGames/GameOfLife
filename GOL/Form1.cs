@@ -15,6 +15,9 @@ namespace GOL
         // The universe array
         Board board = new Board();
 
+        int Rows = 10;
+        int Colls = 10;
+
         // Drawing colors
         Color gridColor = Color.Black;
         Color cellColor = Color.Gray;
@@ -89,7 +92,7 @@ namespace GOL
                     cellRect.Height = cellHeight;
 
                     // Fill the cell with a brush if alive
-                    if (board.universe[x, y].getIsAlive())
+                    if (board.universe[y, x].getIsAlive())
                     {
                         e.Graphics.FillRectangle(cellBrush, cellRect);
                         Font drawFont = new Font("Arial", 16);
@@ -152,7 +155,7 @@ namespace GOL
         {
             timer.Stop();
             generations = 0;
-            board.newUniverse(10, 10);
+            board.newUniverse(Rows, Colls);
             toolStripStatusLabelGenerations.Text = "Generations = " + generations.ToString();
             toolStripStatusLabelLivingCells.Text = "Living Cells = " + LivingCells.ToString();
             graphicsPanel1.Refresh();
@@ -162,6 +165,48 @@ namespace GOL
         {
             if (timerStopped)
                 NextGeneration();
+        }
+
+        private void seedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rndSeed newSeedForm = new rndSeed();
+            if(newSeedForm.ShowDialog(this) == DialogResult.OK)
+            {
+                board.newUniverse(Rows, Colls);
+                string seed = newSeedForm.txb_NewSeed.Text;
+                int seedNum = Convert.ToInt32(seed);
+                board.randomUniverse(seedNum);
+                graphicsPanel1.Refresh();
+            }
+            else { }
+            newSeedForm.Dispose();
+        }
+
+        private void timeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            board.newUniverse(Rows, Colls);
+            DateTime dTime = DateTime.Now;
+            board.randomUniverse((int)dTime.TimeOfDay.TotalSeconds);
+            graphicsPanel1.Refresh();
+        }
+
+        private void universeSizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewSizeForm newSizeDialog = new NewSizeForm();
+
+            if (newSizeDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                string rows = newSizeDialog.txb_NewRows.Text;
+                string cols = newSizeDialog.txb_NewCols.Text;
+                Rows = Convert.ToInt32(rows);
+                Colls = Convert.ToInt32(cols);
+                board.newUniverse(Rows , Colls);
+                graphicsPanel1.Refresh();
+            }
+            else 
+            { 
+            }
+            newSizeDialog.Dispose();
         }
     }
 }

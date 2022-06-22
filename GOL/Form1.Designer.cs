@@ -147,20 +147,22 @@
             this.seedToolStripMenuItem,
             this.timeToolStripMenuItem});
             this.randomUniverseToolStripMenuItem.Name = "randomUniverseToolStripMenuItem";
-            this.randomUniverseToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.randomUniverseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.randomUniverseToolStripMenuItem.Text = "Random Universe";
             // 
             // seedToolStripMenuItem
             // 
             this.seedToolStripMenuItem.Name = "seedToolStripMenuItem";
-            this.seedToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.seedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.seedToolStripMenuItem.Text = "Seed";
+            this.seedToolStripMenuItem.Click += new System.EventHandler(this.seedToolStripMenuItem_Click);
             // 
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.timeToolStripMenuItem.Text = "Time";
+            this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
             // 
             // saveLoadToolStripMenuItem
             // 
@@ -168,7 +170,7 @@
             this.saveUniverseToolStripMenuItem,
             this.loadUniverseToolStripMenuItem});
             this.saveLoadToolStripMenuItem.Name = "saveLoadToolStripMenuItem";
-            this.saveLoadToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.saveLoadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveLoadToolStripMenuItem.Text = "Save/Load";
             // 
             // saveUniverseToolStripMenuItem
@@ -186,13 +188,14 @@
             // universeSizeToolStripMenuItem
             // 
             this.universeSizeToolStripMenuItem.Name = "universeSizeToolStripMenuItem";
-            this.universeSizeToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.universeSizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.universeSizeToolStripMenuItem.Text = "Universe Size";
+            this.universeSizeToolStripMenuItem.Click += new System.EventHandler(this.universeSizeToolStripMenuItem_Click);
             // 
             // timescaleToolStripMenuItem
             // 
             this.timescaleToolStripMenuItem.Name = "timescaleToolStripMenuItem";
-            this.timescaleToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.timescaleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.timescaleToolStripMenuItem.Text = "Timescale";
             // 
             // viewToolStripMenuItem

@@ -31,6 +31,26 @@ namespace GOL
             }
         }
 
+        public void randomUniverse(int seed)
+        {
+            Random rnd = new Random(seed);
+
+            for (int x = 0; x < Rows; x++)
+            {
+                for (int y = 0; y < Cols; y++)
+                {
+                    if(rnd.Next(0,2) == 1)
+                    {
+                        universe[x, y].setIsAlive(true);
+                    }
+                    else
+                    {
+                        universe[x, y].setIsAlive(false);
+                    }
+                }
+            }
+        }
+
         public int getHeight() { return Rows; }
         public int getWidth() { return Cols; }
 
@@ -47,11 +67,13 @@ namespace GOL
                         universe[x, y].setIsAlive(true);
                         universe[x, y].setGenAlive(universe[x, y].getGenAlive() + 1);
                     }
-                    //if is alive and has 2 or 3 neibors it lives
+                    //if is alive and has 2 or 3 neibors it lives, also has logic for all other cases
                     else if (universe[x, y].getIsAlive())
                     {
                         if (neighbors == 2 || neighbors == 3)
                             universe[x, y].setGenAlive(universe[x, y].getGenAlive() + 1);
+                        //At this point, the cell is either dead and does not have 3 neighbors,
+                        //or is alive with more that 3 or less that 2 neighbors and should die
                         else
                         {
                             universe[x, y].setIsAlive(false);

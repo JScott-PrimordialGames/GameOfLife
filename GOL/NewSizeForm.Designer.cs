@@ -31,14 +31,15 @@ namespace GOL
         {
             this.btn_Ok = new System.Windows.Forms.Button();
             this.btn_cancle = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txb_NewRows = new System.Windows.Forms.TextBox();
+            this.txb_NewCols = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Ok
             // 
+            this.btn_Ok.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btn_Ok.Location = new System.Drawing.Point(61, 81);
             this.btn_Ok.Name = "btn_Ok";
             this.btn_Ok.Size = new System.Drawing.Size(75, 23);
@@ -48,6 +49,7 @@ namespace GOL
             // 
             // btn_cancle
             // 
+            this.btn_cancle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancle.Location = new System.Drawing.Point(175, 81);
             this.btn_cancle.Name = "btn_cancle";
             this.btn_cancle.Size = new System.Drawing.Size(75, 23);
@@ -55,19 +57,21 @@ namespace GOL
             this.btn_cancle.Text = "Cancle";
             this.btn_cancle.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txb_NewRows
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.txb_NewRows.Location = new System.Drawing.Point(36, 42);
+            this.txb_NewRows.Name = "txb_NewRows";
+            this.txb_NewRows.Size = new System.Drawing.Size(100, 20);
+            this.txb_NewRows.TabIndex = 2;
+            this.txb_NewRows.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_NewRows_KeyPress);
             // 
-            // textBox2
+            // txb_NewCols
             // 
-            this.textBox2.Location = new System.Drawing.Point(175, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.txb_NewCols.Location = new System.Drawing.Point(175, 42);
+            this.txb_NewCols.Name = "txb_NewCols";
+            this.txb_NewCols.Size = new System.Drawing.Size(100, 20);
+            this.txb_NewCols.TabIndex = 3;
+            this.txb_NewCols.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_NewCols_KeyPress);
             // 
             // label1
             // 
@@ -94,8 +98,8 @@ namespace GOL
             this.ClientSize = new System.Drawing.Size(317, 119);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txb_NewCols);
+            this.Controls.Add(this.txb_NewRows);
             this.Controls.Add(this.btn_cancle);
             this.Controls.Add(this.btn_Ok);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -110,9 +114,9 @@ namespace GOL
 
         private System.Windows.Forms.Button btn_Ok;
         private System.Windows.Forms.Button btn_cancle;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txb_NewRows;
+        public System.Windows.Forms.TextBox txb_NewCols;
     }
 }

@@ -18,3 +18,5 @@ C:\Users\zerop\Documents\ProgramProject1\GOL\GameOfLife\GOL\obj\Debug\GOL.csproj
 C:\Users\zerop\Documents\ProgramProject1\GOL\GameOfLife\GOL\obj\Debug\GOL.csproj.CoreCompileInputs.cache
 C:\Users\zerop\Documents\ProgramProject1\GOL\GameOfLife\GOL\obj\Debug\GOL.exe
 C:\Users\zerop\Documents\ProgramProject1\GOL\GameOfLife\GOL\obj\Debug\GOL.pdb
+C:\Users\zerop\Documents\ProgramProject1\GOL\GameOfLife\GOL\obj\Debug\GOL.NewSizeForm.resources
+C:\Users\zerop\Documents\ProgramProject1\GOL\GameOfLife\GOL\obj\Debug\GOL.rndSeed.resources
