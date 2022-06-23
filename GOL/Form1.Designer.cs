@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabelGenerations = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabelLivingCells = new System.Windows.Forms.ToolStripStatusLabel();
+            this.components = new System.ComponentModel.Container();
+            this.statusHUD = new System.Windows.Forms.StatusStrip();
+            this.lb_Generations = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lb_LivingCells = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lb_UniverseSize = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pauseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,40 +48,53 @@
             this.universeSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timescaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.neighborCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hUDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chb_ShowGrid = new System.Windows.Forms.ToolStripMenuItem();
+            this.chb_ShowNeiborCount = new System.Windows.Forms.ToolStripMenuItem();
+            this.chb_ShowHUD = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.lb_BoundaryRules = new System.Windows.Forms.ToolStripStatusLabel();
+            this.chb_universeRules = new System.Windows.Forms.ToolStripMenuItem();
             this.graphicsPanel1 = new GOL.GraphicsPanel();
-            this.statusStrip1.SuspendLayout();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.statusHUD.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // statusStrip1
+            // statusHUD
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabelGenerations,
-            this.toolStripStatusLabelLivingCells});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 462);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(573, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusHUD.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lb_Generations,
+            this.lb_LivingCells,
+            this.lb_UniverseSize,
+            this.lb_BoundaryRules});
+            this.statusHUD.Location = new System.Drawing.Point(0, 462);
+            this.statusHUD.Name = "statusHUD";
+            this.statusHUD.Size = new System.Drawing.Size(573, 22);
+            this.statusHUD.TabIndex = 2;
+            this.statusHUD.Text = "statusStrip1";
             // 
-            // toolStripStatusLabelGenerations
+            // lb_Generations
             // 
-            this.toolStripStatusLabelGenerations.Name = "toolStripStatusLabelGenerations";
-            this.toolStripStatusLabelGenerations.Size = new System.Drawing.Size(90, 17);
-            this.toolStripStatusLabelGenerations.Text = "Generations = 0";
+            this.lb_Generations.Name = "lb_Generations";
+            this.lb_Generations.Size = new System.Drawing.Size(90, 17);
+            this.lb_Generations.Text = "Generations = 0";
             // 
-            // toolStripStatusLabelLivingCells
+            // lb_LivingCells
             // 
-            this.toolStripStatusLabelLivingCells.Name = "toolStripStatusLabelLivingCells";
-            this.toolStripStatusLabelLivingCells.Size = new System.Drawing.Size(87, 17);
-            this.toolStripStatusLabelLivingCells.Text = "Living Cells = 0";
+            this.lb_LivingCells.Name = "lb_LivingCells";
+            this.lb_LivingCells.Size = new System.Drawing.Size(87, 17);
+            this.lb_LivingCells.Text = "Living Cells = 0";
+            // 
+            // lb_UniverseSize
+            // 
+            this.lb_UniverseSize.Name = "lb_UniverseSize";
+            this.lb_UniverseSize.Size = new System.Drawing.Size(81, 17);
+            this.lb_UniverseSize.Text = "Universe Size: ";
             // 
             // menuStrip1
             // 
@@ -136,7 +151,8 @@
             this.randomUniverseToolStripMenuItem,
             this.saveLoadToolStripMenuItem,
             this.universeSizeToolStripMenuItem,
-            this.timescaleToolStripMenuItem});
+            this.timescaleToolStripMenuItem,
+            this.chb_universeRules});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
@@ -153,14 +169,14 @@
             // seedToolStripMenuItem
             // 
             this.seedToolStripMenuItem.Name = "seedToolStripMenuItem";
-            this.seedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.seedToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.seedToolStripMenuItem.Text = "Seed";
             this.seedToolStripMenuItem.Click += new System.EventHandler(this.seedToolStripMenuItem_Click);
             // 
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.timeToolStripMenuItem.Text = "Time";
             this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
             // 
@@ -178,12 +194,14 @@
             this.saveUniverseToolStripMenuItem.Name = "saveUniverseToolStripMenuItem";
             this.saveUniverseToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.saveUniverseToolStripMenuItem.Text = "Save Universe";
+            this.saveUniverseToolStripMenuItem.Click += new System.EventHandler(this.saveUniverseToolStripMenuItem_Click);
             // 
             // loadUniverseToolStripMenuItem
             // 
             this.loadUniverseToolStripMenuItem.Name = "loadUniverseToolStripMenuItem";
             this.loadUniverseToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.loadUniverseToolStripMenuItem.Text = "Load Universe";
+            this.loadUniverseToolStripMenuItem.Click += new System.EventHandler(this.loadUniverseToolStripMenuItem_Click);
             // 
             // universeSizeToolStripMenuItem
             // 
@@ -197,40 +215,52 @@
             this.timescaleToolStripMenuItem.Name = "timescaleToolStripMenuItem";
             this.timescaleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.timescaleToolStripMenuItem.Text = "Timescale";
+            this.timescaleToolStripMenuItem.Click += new System.EventHandler(this.timescaleToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gridToolStripMenuItem,
-            this.neighborCountToolStripMenuItem,
-            this.hUDToolStripMenuItem});
+            this.chb_ShowGrid,
+            this.chb_ShowNeiborCount,
+            this.chb_ShowHUD,
+            this.colorsToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
             // 
-            // gridToolStripMenuItem
+            // chb_ShowGrid
             // 
-            this.gridToolStripMenuItem.Checked = true;
-            this.gridToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.gridToolStripMenuItem.Name = "gridToolStripMenuItem";
-            this.gridToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.gridToolStripMenuItem.Text = "Grid";
+            this.chb_ShowGrid.Checked = true;
+            this.chb_ShowGrid.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chb_ShowGrid.Name = "chb_ShowGrid";
+            this.chb_ShowGrid.Size = new System.Drawing.Size(180, 22);
+            this.chb_ShowGrid.Text = "Grid";
+            this.chb_ShowGrid.Click += new System.EventHandler(this.chb_ShowGrid_Click);
             // 
-            // neighborCountToolStripMenuItem
+            // chb_ShowNeiborCount
             // 
-            this.neighborCountToolStripMenuItem.Checked = true;
-            this.neighborCountToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.neighborCountToolStripMenuItem.Name = "neighborCountToolStripMenuItem";
-            this.neighborCountToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.neighborCountToolStripMenuItem.Text = "Neighbor Count";
+            this.chb_ShowNeiborCount.Checked = true;
+            this.chb_ShowNeiborCount.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chb_ShowNeiborCount.Name = "chb_ShowNeiborCount";
+            this.chb_ShowNeiborCount.Size = new System.Drawing.Size(180, 22);
+            this.chb_ShowNeiborCount.Text = "Neighbor Count";
+            this.chb_ShowNeiborCount.Click += new System.EventHandler(this.neighborCountToolStripMenuItem_Click);
             // 
-            // hUDToolStripMenuItem
+            // chb_ShowHUD
             // 
-            this.hUDToolStripMenuItem.Checked = true;
-            this.hUDToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.hUDToolStripMenuItem.Name = "hUDToolStripMenuItem";
-            this.hUDToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.hUDToolStripMenuItem.Text = "HUD";
+            this.chb_ShowHUD.Checked = true;
+            this.chb_ShowHUD.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chb_ShowHUD.Name = "chb_ShowHUD";
+            this.chb_ShowHUD.Size = new System.Drawing.Size(180, 22);
+            this.chb_ShowHUD.Text = "HUD";
+            this.chb_ShowHUD.Click += new System.EventHandler(this.chb_ShowHUD_Click);
+            // 
+            // colorsToolStripMenuItem
+            // 
+            this.colorsToolStripMenuItem.Name = "colorsToolStripMenuItem";
+            this.colorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colorsToolStripMenuItem.Text = "Colors";
+            this.colorsToolStripMenuItem.Click += new System.EventHandler(this.colorsToolStripMenuItem_Click);
             // 
             // toolStripContainer1
             // 
@@ -250,6 +280,19 @@
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
             // 
+            // lb_BoundaryRules
+            // 
+            this.lb_BoundaryRules.Name = "lb_BoundaryRules";
+            this.lb_BoundaryRules.Size = new System.Drawing.Size(95, 17);
+            this.lb_BoundaryRules.Text = "Boundary Rules: ";
+            // 
+            // chb_universeRules
+            // 
+            this.chb_universeRules.Name = "chb_universeRules";
+            this.chb_universeRules.Size = new System.Drawing.Size(180, 22);
+            this.chb_universeRules.Text = "Infinite Universe";
+            this.chb_universeRules.Click += new System.EventHandler(this.finiteUniverseToolStripMenuItem_Click);
+            // 
             // graphicsPanel1
             // 
             this.graphicsPanel1.BackColor = System.Drawing.SystemColors.Window;
@@ -261,18 +304,28 @@
             this.graphicsPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.graphicsPanel1_Paint);
             this.graphicsPanel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.graphicsPanel1_MouseClick);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 484);
             this.Controls.Add(this.toolStripContainer1);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.statusHUD);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.statusHUD.ResumeLayout(false);
+            this.statusHUD.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
@@ -286,9 +339,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusHUD;
         private GraphicsPanel graphicsPanel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelGenerations;
+        private System.Windows.Forms.ToolStripStatusLabel lb_Generations;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pauseToolStripMenuItem;
@@ -304,11 +357,17 @@
         private System.Windows.Forms.ToolStripMenuItem universeSizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem timescaleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gridToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem neighborCountToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hUDToolStripMenuItem;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelLivingCells;
+        private System.Windows.Forms.ToolStripMenuItem chb_ShowGrid;
+        private System.Windows.Forms.ToolStripMenuItem chb_ShowNeiborCount;
+        private System.Windows.Forms.ToolStripMenuItem chb_ShowHUD;
+        private System.Windows.Forms.ToolStripStatusLabel lb_LivingCells;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripMenuItem colorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel lb_UniverseSize;
+        private System.Windows.Forms.ToolStripStatusLabel lb_BoundaryRules;
+        private System.Windows.Forms.ToolStripMenuItem chb_universeRules;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
     }
 }
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GOL
 {
-    public partial class rndSeed : Form
+    public partial class SingleInput : Form
     {
-        public rndSeed()
+        public SingleInput()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace GOL
 {
-    partial class rndSeed
+    partial class SingleInput
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,20 @@ namespace GOL
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Message = new System.Windows.Forms.Label();
             this.txb_NewSeed = new System.Windows.Forms.TextBox();
             this.btn_Ok = new System.Windows.Forms.Button();
             this.btn_cancle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_Message
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Random seed for Universe";
+            this.lbl_Message.AutoSize = true;
+            this.lbl_Message.Location = new System.Drawing.Point(70, 49);
+            this.lbl_Message.Name = "lbl_Message";
+            this.lbl_Message.Size = new System.Drawing.Size(133, 13);
+            this.lbl_Message.TabIndex = 7;
+            this.lbl_Message.Text = "Random seed for Universe";
             // 
             // txb_NewSeed
             // 
@@ -72,16 +72,16 @@ namespace GOL
             this.btn_cancle.Text = "Cancle";
             this.btn_cancle.UseVisualStyleBackColor = true;
             // 
-            // rndSeed
+            // SingleInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(270, 149);
             this.Controls.Add(this.btn_cancle);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_Message);
             this.Controls.Add(this.txb_NewSeed);
             this.Controls.Add(this.btn_Ok);
-            this.Name = "rndSeed";
+            this.Name = "SingleInput";
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -89,10 +89,9 @@ namespace GOL
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txb_NewSeed;
         private System.Windows.Forms.Button btn_Ok;
         private System.Windows.Forms.Button btn_cancle;
+        public System.Windows.Forms.Label lbl_Message;
     }
 }

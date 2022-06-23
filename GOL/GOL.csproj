@@ -54,11 +54,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="rndSeed.cs">
+    <Compile Include="ColorControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rndSeed.Designer.cs">
-      <DependentUpon>rndSeed.cs</DependentUpon>
+    <Compile Include="ColorControl.Designer.cs">
+      <DependentUpon>ColorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SingleInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleInput.Designer.cs">
+      <DependentUpon>SingleInput.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphicsPanel.cs">
       <SubType>Component</SubType>
@@ -74,8 +80,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rndSeed.resx">
-      <DependentUpon>rndSeed.cs</DependentUpon>
+    <EmbeddedResource Include="ColorControl.resx">
+      <DependentUpon>ColorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleInput.resx">
+      <DependentUpon>SingleInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewSizeForm.resx">
       <DependentUpon>NewSizeForm.cs</DependentUpon>
@@ -117,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\StartWithoutDebug_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
